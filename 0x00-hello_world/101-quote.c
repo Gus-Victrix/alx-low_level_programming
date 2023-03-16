@@ -10,16 +10,17 @@
  *	2. standard output.
  * The function strlen() has been used to determine length of the string for
  * write().
- * 
+ *
  * Return: 1 after successful execution
  */
 int main(void)
 {
-	char words[] = "and that piece of art is useful\" - Dora Koprar, 2015-10-19\n"
+	char *words = "and that piece of art is useful\" - Dora Koprar, 2015-10-19\n"
+	char *message = "This is not easy";
 		;
 
 	write(1, words, strlen(words));
-	write(STDERR_FILENO, words, strlen(words));
+	write(STDERR_FILENO, message, strlen(message));
 
 	return (1);
 }
