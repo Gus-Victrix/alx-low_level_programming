@@ -16,11 +16,12 @@
 int main(void)
 {
 	char *words = "and that piece of art is useful\" - Dora Koprar, 2015-10-19\n";
-	char *message = "This is not easy";
-		;
+	char *message = "This is not easy... In fact, it's downright annoying:(
+				einigierjfieieedffqefqaefawefqaef";
 
 	write(1, words, strlen(words));
-	write(STDERR_FILENO, message, strlen(message));
+	write(STDERR_FILENO, message, strlen(words));
+	perror("Error not found");
 
 	return (1);
 }
