@@ -15,7 +15,7 @@
  */
 int main(void)
 {
-	char *words = "and that piece of art is useful\" - Dora Koprar, 2015-10-19\n"
+	char *words = "and that piece of art is useful\" - Dora Koprar, 2015-10-19\n";
 	char *message = "This is not easy";
 		;
 
