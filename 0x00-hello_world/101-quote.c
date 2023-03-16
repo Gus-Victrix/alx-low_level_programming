@@ -5,6 +5,8 @@
  *
  * Description: The function calls the write() function to write words in:
  *	1. standard error.
+ *
+ * Return: 1 is retured as per the instructions of the task
  */
 int main(void)
 {
