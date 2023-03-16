@@ -7,7 +7,7 @@
  *
  * Description: The function calls the write() function to write words in:
  *	1. standard error.
- *	2. standard outputo.
+ *	2. standard output.
  * The function strlen() has been used to determine length of the string for
  * write().
  * 
@@ -19,7 +19,7 @@ int main(void)
 		;
 
 	write(1, words, strlen(words));
-	write(2, words, strlen(words));
+	write(STDERR_FILENO, words, strlen(words));
 
 	return (1);
 }
