@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S -mtune=intel $CFILE -o $(echo "$CFILE" | cut -f1 -d'.')
+gcc -S -masm=intel -mtune=intel $CFILE
