@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
 
 /**
  * main - describes the sign of the variable in n
- * @n : the number whose sign is to be printed
  *
  * Return: 0 for it is an int type function
  */
