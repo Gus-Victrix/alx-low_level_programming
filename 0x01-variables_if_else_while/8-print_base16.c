@@ -9,13 +9,13 @@ int main(void)
 {
 	int a = 47;
 
-	do{
+	do {
 		a++;
 		if ((a > 57) && (a < 97))
 			a = 97;
 		putchar((char) a);
 		putchar((char) 10);
-	}while (a < 102)
+	} while (a < 102)
 
 	return (0);
 }

@@ -13,7 +13,8 @@ PRINT_LOOP:
 	putchar((char) a);
 	putchar('\n');
 	a++;
-	if (a < 57) goto PRINT_LOOP;
+	if (a < 57)
+		goto PRINT_LOOP;
 
 	return (0);
 }

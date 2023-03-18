@@ -14,7 +14,7 @@ LABEL:
 	putchar((char) 10);
 	a--;
 
-	if( a > 96)
+	if (a > 96)
 		goto LABEL;
 
 	return (0);
