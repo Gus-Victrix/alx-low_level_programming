@@ -11,7 +11,7 @@ int main(void)
 	int b = 65;
 	int i;
 
-	for(i = 0; i < 26; i++)
+	for (i = 0; i < 26; i++)
 	{
 		putchar((char) a);
 		putchar((char) b);
