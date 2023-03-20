@@ -9,13 +9,13 @@ int main(void)
 {
 	int a = 97;
 
-	for (a = 97 ; a < 123; a++)
+	for (a = 97; a <= 122; a++)
 	{
 		if ((a == 113) || (a == 101))
 			continue;
 		putchar((char) a);
-		putchar('\n');
 	}
+	putchar((char) 10);
 
 	return (0);
 }
