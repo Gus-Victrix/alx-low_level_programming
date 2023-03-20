@@ -13,14 +13,13 @@ int main(void)
 	for (i = 48; i < 58; i++)
 		for (j = i; j < 58; j++)
 		{
-			putchar((char) i);
-			putchar((char) j);
-
 			if (i == 57)
 			{
 				putchar((char) 10);
 				break;
 			}
+			putchar((char) i);
+			putchar((char) j);
 			putchar((char) 44);
 			putchar((char) 32);
 		}
