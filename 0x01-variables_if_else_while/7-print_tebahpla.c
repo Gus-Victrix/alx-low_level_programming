@@ -11,11 +11,11 @@ int main(void)
 
 LABEL:
 	putchar((char) a);
-	putchar((char) 10);
 	a--;
 
-	if (a > 96)
+	if (a != 97)
 		goto LABEL;
+	putchar((char) 10);
 
 	return (0);
 }
