@@ -11,10 +11,10 @@ int main(void)
 
 PRINT_LOOP:
 	putchar((char) a);
-	putchar('\n');
 	a++;
-	if (a < 57)
+	if (a < 58)
 		goto PRINT_LOOP;
+	putchar((char) 10);
 
 	return (0);
 }
