@@ -14,8 +14,8 @@ int main(void)
 		if ((a > 57) && (a < 97))
 			a = 97;
 		putchar((char) a);
-		putchar((char) 10);
-	} while (a < 102)
+	} while (a < 102);
+	putchar((char) 10);
 
 	return (0);
 }
