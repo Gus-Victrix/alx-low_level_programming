@@ -9,7 +9,7 @@ int main(void)
 {
 	int a = 97;
 
-	for (a ; a < 123; a++)
+	for (a = 97 ; a < 123; a++)
 	{
 		if ((a == 113) || (a == 101))
 			continue;
