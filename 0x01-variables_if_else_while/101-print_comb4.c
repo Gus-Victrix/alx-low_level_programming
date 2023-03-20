@@ -1,28 +1,31 @@
 #include <stdio.h>
 
 /**
- * main - prints all unique combinations of 3 numbers using putchar
+ * main - prints all possible unique combinations of 2 letters using putchar()
  *
- * Return: it returns 0 because it is an int type function
+ * Return: 0 because it's an int type function
  */
 int main(void)
 {
-	int a;
-	int b;
-	int c;
+	int i;
+	int j;
+	int k;
 
-	for (a = 48; a < 58; a++)
-		for (b = a + 1; b < 58; b++)
-			for (c = b + 1; c < 58; c++)
+	for (i = 48; i < 57; i++)
+		for (j = i + 1; j < 58; j++)
+			for (k = j + 1; k < 58; k++)
 			{
-				putchar((char) a);
-				putchar((char) b);
-				putchar((char) c);
-
-				if ((a == 57) || (b == 57) || (c == 57))
+				putchar((char) i);
+				putchar((char) j);
+				putchar((char) k);
+				if ((i == 55) && (j == 56) && (k == 57))
+				{
+					putchar('\n');
 					break;
+				}
 				putchar((char) 44);
 				putchar((char) 32);
 			}
+
 	return (0);
 }
