@@ -8,17 +8,14 @@
 int main(void)
 {
 	int a = 97;
-	int b = 65;
-	int i;
 
-	for (i = 0; i < 26; i++)
+	for (a = 97; a != 91; a++)
 	{
+		if (a == 123)
+			a = 65;
 		putchar((char) a);
-		putchar((char) b);
-		putchar((char) 10);
-		a++;
-		b++;
 	}
+	putchar((char) 10);
 
 	return (0);
 }
