@@ -1,28 +1,30 @@
 #include "main.h"
 
 /**
- * print_diagonal - Prints a diagonal input-specified size using '\'
- * @n: Length of diagonal
- */
-
-void print_diagonal(int n);
+  * print_diagonal - Draws a diagonal lines according parameter
+  * @n: The number of times to print diagonal lines
+  *
+  * Return: empty
+  */
+void print_diagonal(int n)
 {
-	int length, space;
+	int x, y;
 
-	if (n > 0)
+	if (n <= 0)
 	{
-		for (length = 0; length < n; length++)
+		_putchar('\n');
+	}
+	else
+	{
+		for (x = 0; x < n; x++)
 		{
-			for (space = 0; space < length; space++)
+			for (y = 0; y < x; y++)
+			{
 				_putchar(32);
+			}
+
 			_putchar(92);
-
-			if (length == n - 1)
-				continue;
-
-			_putchar(10);
+			_putchar('\n');
 		}
 	}
-
-	_putchar(10);
 }
