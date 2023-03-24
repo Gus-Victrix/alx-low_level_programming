@@ -8,22 +8,34 @@
 
 int main(void)
 {
-	int i;
+	int x;
 
-	for (a = 1; a <= 100; a++)
+	for (x = 1; x <= 100; x++)
 	{
-		if (a % 3 == 0 || a % 5 == 0)
+		if ((x % 3 == 0) && (x % 5 == 0))
 		{
-			if (a % 3 == 0)
-				printf("Fizz");
-			if (a % 5 == 0)
-				printf("Buzz");
+			printf("FizzBuzz");
+		}
+		else if (x % 3 == 0)
+		{
+			printf("Fizz");
+		}
+		else if (x % 5 == 0)
+		{
+			printf("Buzz");
 		}
 		else
-			printf("%d", a);
-		putchar(32);
+		{
+			printf("%d", x);
+		}
+
+		if (x != 100)
+		{
+			printf(" ");
+		}
 	}
-	putchar(10);
+
+	printf("\n");
 
 	return (0);
 }
