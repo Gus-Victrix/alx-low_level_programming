@@ -21,7 +21,9 @@ int main(void)
 		}
 		else
 			printf("%d", a);
-		putchar(10);
+		putchar(32);
 	}
+	putchar(10);
+
 	return (0);
 }
