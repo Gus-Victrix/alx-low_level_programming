@@ -15,5 +15,4 @@ void print_rev(char *s)
 		_putchar(*s);
 		s--;
 	} while (s != tmp - 1);
-	_putchar(10);
 }
