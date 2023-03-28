@@ -9,7 +9,7 @@
 int _strlen(char *s)
 {
 	int i;
-	
+
 	for (i = 0; s[i] != 0; i++)
 		continue;
 	return (i);
@@ -22,7 +22,7 @@ int _strlen(char *s)
 
 void puts_half(char *str)
 {
-	int length - _strlen(str);
+	int length = _strlen(str);
 	int half;
 
 	for (half = (length + 1) / 2; half < length; half++)
