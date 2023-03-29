@@ -10,7 +10,12 @@
 
 char *cap_string(char *s)
 {
-	char *mark = s;
+	char *mark;
+
+	if (s == NULL)
+		return (NULL);
+
+	mark = s;
 
 	if (*mark >= 97 && *mark <= 122)
 	{
