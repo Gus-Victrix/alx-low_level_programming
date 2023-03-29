@@ -19,4 +19,6 @@ char *cap_string(char *str);
 
 char *leet(char *str);
 
+char *leet_replacer(char *str, int i);
+
 #endif /*MAIN_H*/
