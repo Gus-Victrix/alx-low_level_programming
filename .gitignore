@@ -3,3 +3,5 @@
 a.out
 *.s
 *.o
+main*.c
+*.txt
