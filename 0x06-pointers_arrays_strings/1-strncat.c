@@ -12,18 +12,18 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	// Mark end of dest.
-	// Add first n characters of src to end of dest or until null is encountered.
-	// Add null at end.
 	char *mark = dest;
+	int i = 0;
 
+	/*Marking end of dest string.*/
 	while (*mark != 0)
 		mark++;
 
-	while (n && *src)
+	/*Appending first n before null is reached.*/
+	while (n && *(src + i))
 	{
-		*mark = *src;
-		n--, mark++, src++;
+		*mark = *(src + i);
+		n--, mark++, i++;
 	}
 	*mark = 0;
 

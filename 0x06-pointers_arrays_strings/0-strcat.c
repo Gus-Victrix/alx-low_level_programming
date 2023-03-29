@@ -10,15 +10,15 @@
 char *_strcat(char *dest, char *src)
 {
 	char *mark = dest;
+	int i = 0;
 
 	while (*mark != 0)
 		mark++;
 
-	while (*src != 0)
+	while (*(src + i))
 	{
-		*mark = *src;
-		src++;
-		mark++;
+		*mark = *(src + i);
+		i++, mark++;
 	}
 	*mark = 0;
 
