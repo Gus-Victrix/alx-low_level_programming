@@ -15,11 +15,15 @@ char *_strncpy(char *dest, char *src, int n)
 	char *mark = dest;
 	int i = 0;
 
+	/*Appending first n characters of src to dest or until null is reached*/
 	while (*(src + i) && n - i)
 	{
 		*(src + i) = *mark;
+		*mark = *(src + i);
 		mark++, i++;
 	}
+
+	/*Appending nulls to fill n characters*/
 	while (n - i)
 	{
 		*mark = 0;
