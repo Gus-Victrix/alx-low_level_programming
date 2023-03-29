@@ -7,33 +7,25 @@
  *
  * Return: Pointer to output string.
  */
-
 char *cap_string(char *str)
 {
-	char *mark;
+	char separators[] = " \t\n,;.!?\"(){}";
+	int i, j;
 
-	if (str == NULL)
-		return (NULL);
+	if (str[0] >= 'a' && str[0] <= 'z')
+		str[0] -= 'a' - 'A';
 
-	mark = str;
-
-	if (*mark >= 97 && *mark <= 122)
+	for (i = 1; str[i] != '\0'; i++)
 	{
-		*mark -= 32;
-		mark++;
+		for (j = 0; separators[j] != '\0'; j++)
+		{
+			if (str[i - 1] == separators[j])
+			{
+				if (str[i] >= 'a' && str[i] <= 'z')
+					str[i] -= 'a' - 'A';
+				break;
+			}
+		}
 	}
-
-	while (*mark)
-	{
-		if (*(mark - 1) == 10 || *(mark - 1) == 9 || *(mark - 1) >= 32 &&
-				*(mark - 1) <= 34 || *(mark - 1) == 44 || *(mark - 1) == 46 ||
-				*(mark - 1) == 63 || *(mark - 1) == 58 || *(mark - 1) == 59 ||
-				*(mark - 1) == 40 || *(mark - 1) == 41 || *(mark - 1) == 123 ||
-				*(mark - 1) == 125)
-			if (*mark >= 97 && *mark <= 122)
-				*mark -= 32;
-		mark++;
-	}
-
 	return (str);
 }
