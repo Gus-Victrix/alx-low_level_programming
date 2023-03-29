@@ -1,31 +1,51 @@
 #include "main.h"
 
+int _strlen(char *s);
+char *_strncat(char *dest, char *src, int n);
+
 /**
- * _strncat - Adds at most n bytes of src string to dest string.
+ * _strncat - Concatanate 2 string up to a inputed size
  *
- * @n: Number of bytes of second string to add to first string.
- * @src: String to be appended to dest.
- * @dest: String to which src is appended.
+ * @dest: Destination of the concatenation
+ * @src: String to concatenate
+ * @n: Inputed size
  *
- * Return: Pointer to destination string.
+ * Return: The new string
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-	char *mark = dest;
-	int i = 0;
+	/*     i : Index for dest, j : Index for src     */
 
-	/*Marking end of dest string.*/
-	while (*mark != 0)
-		mark++;
+	int i, j;
+	int sizeDest = _strlen(dest), globalSize = sizeDest + _strlen(src);
 
-	/*Appending first n before null is reached.*/
-	while (n && *(src + i))
+	sizeDest + n < globalSize ? globalSize = sizeDest + n : 0;
+
+	for (i = _strlen(dest), j = 0 ; i < globalSize; i ++, j++)
 	{
-		*mark = *(src + i);
-		n--, mark++, i++;
+		dest[i] = src[j];
 	}
-	*mark = 0;
+
+	dest[i + 1] = '\0';
 
 	return (dest);
+}
+
+/**
+ * _strlen - Calculate the length of a string.
+ *
+ * @s: String to manipulate.
+ *
+ * Return: The length of the inputed string.
+ */
+
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+	}
+	return (i);
 }

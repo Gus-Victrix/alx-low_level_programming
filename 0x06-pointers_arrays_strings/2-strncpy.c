@@ -1,22 +1,47 @@
 #include "main.h"
 
+int _strlen(char *s);
+char *_strncpy(char *dest, char *src, int n);
+
 /**
- * _strncpy - Copies the first n bytes of src into buffer pointed to by dest.
+ * _strncpy - copy the string src to dest, up to a specificate size
  *
- * @src: String to be copied to buffer.
- * @dest: Destination buffer.
- * @n: Number of bytes of src string to be copied.
+ * @dest: Destination string
+ * @src: Source string
+ * @n: Number of charatere to copy
  *
- * Return: Pointer to destination buffer.
+ * Return: The destination string
+ */
+char *_strncpy(char *dest, char *src, int n)
+{
+	int counter;
+
+	for (counter = 0; src[counter] != '\0' && counter < n; counter++)
+	{
+		dest[counter] = src[counter];
+	}
+	while (counter < n)
+	{
+		dest[counter] = '\0';
+		counter++;
+	}
+	return (dest);
+}
+
+/**
+ * _strlen - Calculate the length of a string.
+ *
+ * @s: String to manipulate.
+ *
+ * Return: The length of the inputed string.
  */
 
-char *_strncpy(char *dest, char *src, int n)
+int _strlen(char *s)
 {
 	int i;
 
-	for (i = 0; i < n && src[i]; i++)
-		dest[i] = src[i];
-	for (; i < n; i++)
-		dest[i] = 0;
-	return (dest);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+	}
+	return (i);
 }

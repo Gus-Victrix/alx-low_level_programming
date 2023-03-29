@@ -1,23 +1,22 @@
 #include "main.h"
 
 /**
- * string_toupper - Changes the input string characters to uppercase.
+ * string_toupper - Uppercase letters
  *
- * @c: String to be made uppercase.
+ * @str: Sting inputed
  *
- * Return: Pointer to uppercase string.
+ * Return: The string in uppercase
  */
-
-char *string_toupper(char *c)
+char *string_toupper(char *str)
 {
-	char *mark = c;
+	int i;
 
-	while (*mark)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (*mark >= 97 && *mark <= 122)
-			*mark -= 32;
-		mark++;
+		if (str[i] > 96 && str[i] < 123)
+		{
+			str[i] -= 32;
+		}
 	}
-
-	return (c);
+	return (str);
 }

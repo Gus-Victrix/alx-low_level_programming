@@ -1,43 +1,28 @@
 #include "main.h"
 
 /**
- * leet_replacer - Replaces the leters in AEDTL and aedtl with 43071.
+ * leet - Changes certain letter into numbers
  *
- * @str: Input string to be modified.
- * @i: integer marking the position of the character to be modified relative
- * to the start of string.
+ * @str: String inputed
  *
- * Return: pointer to modified string.
+ * Return: The new str, with modifications
  */
-
-char *leet_replacer(char *str, int i)
-{
-	char caps[] = "AEOTL";
-	char lows[] = "aeotl";
-	char nums[] = "43071";
-	int n;
-
-	for (n = 0; caps[n]; n++)
-		if (caps[n] && (str[i] == caps[n] || str[i] == lows[n]))
-			str[i] = nums[n];
-
-	return (str);
-}
-/**
- * leet - changes Aa, Ee, Oo, Tt, Ll to 4, 3, 0, 7, 1 respectively.
- *
- * @str: input string.
- *
- * Return: pointer to modified string.
- */
-
 char *leet(char *str)
 {
-	int i = 0;
+	char transoform[] = "4433007711";
+	int sizeOfT = sizeof(transoform) / sizeof(char);
+	char excludeChar[] = "aAeEoOtTlL";
+	int i, j;
 
-	while (str[i])
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		str = leet_replacer(str, i);
+		for (j = 0; j < sizeOfT; j++)
+		{
+			if (str[i] == excludeChar[j])
+			{
+				str[i] = transoform[j];
+			}
+		}
 	}
 	return (str);
 }

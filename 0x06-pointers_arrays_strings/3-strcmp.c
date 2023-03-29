@@ -1,24 +1,24 @@
 #include "main.h"
 
 /**
- * _strcmp - Compares value of two strings.
+ * _strcmp - Copare 2 sting
  *
- * @s1: First string to be compared.
- * @s2: Second string to be compared.
+ * @s1: String to compare
+ * @s2: String to compare
  *
- * Return: Ascii value of s1 - Ascii vlue of s2.
+ * Return: Positive if s1 > s2, negative if s1 < s2, 0 if s1 == s2
  */
-
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0;
+	/*    i : Index to browse inputed word    */
+	int i;
 
-	while (*(s1 + i) == *(s2 + i))
+	for (i = 0; s1[i] != '\0' || s2[i] != '\0'; i++)
 	{
-		if (!(*(s1 + i)) || !(*(s2 + i)))
-			break;
-		i++;
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
 	}
-
-	return (*(s1 + i) - *(s2 + i));
+	return (0);
 }
