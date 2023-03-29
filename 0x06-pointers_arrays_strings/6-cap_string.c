@@ -3,19 +3,19 @@
 /**
  * cap_string - Capitalizes the first character of each word in input string.
  *
- * @s: Input string.
+ * @str: Input string.
  *
  * Return: Pointer to output string.
  */
 
-char *cap_string(char *s)
+char *cap_string(char *str)
 {
 	char *mark;
 
-	if (s == NULL)
+	if (str == NULL)
 		return (NULL);
 
-	mark = s;
+	mark = str;
 
 	if (*mark >= 97 && *mark <= 122)
 	{
@@ -35,5 +35,5 @@ char *cap_string(char *s)
 		mark++;
 	}
 
-	return (s);
+	return (str);
 }
