@@ -33,9 +33,11 @@ char *leet_replacer(char *str, int i)
 
 char *leet(char *str)
 {
+	int i = 0;
+
 	while (str[i])
 	{
-		str = leet_replacer(*str, i);
+		str = leet_replacer(str, i);
 	}
 	return (str);
 }
