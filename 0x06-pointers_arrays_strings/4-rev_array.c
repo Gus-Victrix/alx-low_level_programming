@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * rev_array - Reverses the contents of an array of integers.
+ * reverse_array - Reverses the contents of an array of integers.
  *
  * @a: Pointer to array of integers.
  * @n: Number of elements in the array.
