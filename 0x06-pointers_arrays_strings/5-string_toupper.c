@@ -16,7 +16,7 @@ char *string_toupper(char *c)
 	{
 		if (*mark >= 97 && *mark <= 122)
 			*mark -= 32;
-		*mark++;
+		mark++;
 	}
 
 	return (c);
