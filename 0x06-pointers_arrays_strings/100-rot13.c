@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * rot13 - Change the string with the rot13 method
+ * rot13 - Encrypt string via rot13
  *
- * @str: String inputed
+ * @str: Input String
  *
  * Return: The modify string
  */
