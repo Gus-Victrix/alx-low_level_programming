@@ -14,7 +14,10 @@ void print_diagsums(int *a, int size)
 	int (*b)[size] = (int (*)[size])a;
 
 	for (i = 0; i < size; i++)
-		lead += b[i][i], inferior += b[size - i - 1][i];
+	{
+		lead += b[i][i];
+		inferior += b[size - i - 1][i];
+	}
 
 	printf("%d, %d\n", lead, inferior);
 }
