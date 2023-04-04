@@ -11,15 +11,13 @@
 
 char *_strchr(char *s, char c)
 {
-	char *address = s;
+	int steps;
 
-	if (!s || !(c >= 0 && c <= 255))
+	if (!s || !*s)
 		return (0);
 
-	while (*address && *address != c)
-		address++;
-	if (!*address)
-		address = 0;
-
-	return (address);
+	for (steps = 0; *(s + steps); steps++)
+		if (*(s + steps) == c)
+			return (s + steps);
+	return (0);
 }
