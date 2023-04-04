@@ -15,7 +15,7 @@ unsigned int _strspn(char *s, char *accept)
 	int scan = 0;
 	unsigned char indicator = 1;
 
-	if (!s)
+	if (!s || !accept || !*accept || !*s)
 		return (steps);
 
 	while (*(s + steps) && indicator)
