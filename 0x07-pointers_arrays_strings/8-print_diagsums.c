@@ -14,8 +14,8 @@ void print_diagsums(int *a, int size)
 
 	for (row = 0; row < size; row++)
 	{
-		lead += *((row * size) + row);
-		inferior += *((row * size) + size - 1 - row);
+		lead += *(a + (row * size) + row);
+		inferior += *(a + (row * size) + size - 1 - row);
 	}
 
 	printf("%d, %d\n", lead, inferior);
