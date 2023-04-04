@@ -14,7 +14,7 @@ char *_strchr(char *s, char c)
 	char *address = s;
 
 	if (!s || !*s)
-		return (NULL);
+		return (0);
 
 	while (*address && *address != c)
 		address++;
