@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 {
 	char *address = s;
 
-	if (!s || !*s)
+	if (!s || !(c >= 0 && c <= 255))
 		return (0);
 
 	while (*address && *address != c)
