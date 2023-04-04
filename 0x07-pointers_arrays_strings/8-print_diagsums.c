@@ -10,13 +10,12 @@
 
 void print_diagsums(int *a, int size)
 {
-	int lead = 0, inferior = 0, i;
-	int (*b)[size] = (int (*)[size])a;
+	int lead = 0, inferior = 0, row;
 
-	for (i = 0; i < size; i++)
+	for (row = 0; row < size; row++)
 	{
-		lead += b[i][i];
-		inferior += b[size - i - 1][i];
+		lead += *((row * size) + row);
+		inferior += *((row * size) + size - 1 - row);
 	}
 
 	printf("%d, %d\n", lead, inferior);
