@@ -14,7 +14,7 @@ char *_strstr(char *haystack, char *needle)
 	char *mark = haystack;
 	unsigned int i;
 
-	if (!mark)
+	if (!mark || !needle ||	!*needle)
 		return (mark);
 
 	while (*mark)
