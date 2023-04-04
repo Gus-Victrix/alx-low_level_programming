@@ -13,11 +13,13 @@ char *_strchr(char *s, char c)
 {
 	int steps;
 
-	if (!s || !*s)
+	if (!s)
 		return (0);
 
 	for (steps = 0; *(s + steps); steps++)
 		if (*(s + steps) == c)
 			return (s + steps);
+	if (*(s + steps) == c)
+		return (s + steps);
 	return (0);
 }
