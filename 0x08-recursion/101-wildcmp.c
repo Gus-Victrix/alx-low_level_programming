@@ -20,6 +20,13 @@ int wildcmp(char *s1, char *s2)
 		return (wildcmp(s1 + 1, s2 + 1));
 
 	/*Case wildcard*/
+	/*Case with consequtive * in s2*/
+ADJUSTMENT:
+	if (*s2 == '*' && *(s2 + 1) == '*')
+	{
+		s2++;
+		goto ADJUSTMENT;
+	}
 	if (*s2 == '*')
 		return (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2));
 
