@@ -11,10 +11,6 @@
 
 int wildcmp(char *s1, char *s2)
 {
-	/*Case null pointer(s)*/
-	if (!s1 || !s2)
-		return (-1);
-
 	/*Case Strings empty*/
 	if (!*s1 && !*s2)
 		return (1);
