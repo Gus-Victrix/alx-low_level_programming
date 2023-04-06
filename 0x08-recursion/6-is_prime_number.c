@@ -28,5 +28,5 @@ int prime_check(int number, int quotient)
 		return (1);
 	if (number % quotient == 0)
 		return (0);
-	return (number, quotient + 1);
+	return (prime_check(number, quotient + 1));
 }
