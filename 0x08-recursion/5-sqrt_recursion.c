@@ -10,8 +10,6 @@
 
 int _sqrt_recursion(int n)
 {
-	int i;
-
 	if (n < 0)
 		return (-1);
 	else if (!n || n == 1)
@@ -33,11 +31,11 @@ int  sqrt_check(int number, int start, int end)
 {
 	int mid = (start + end) / 2;
 
-	if (mid * mid == n)
+	if (mid * mid == number)
 		return (mid);
-	else if (mid * mid > n)
+	else if (mid * mid > number)
 		return (sqrt_check(number, start, mid - 1));
-	if ((mid + 1) * (mid + 1) > n)
+	if ((mid + 1) * (mid + 1) > number)
 		return (-1);
 	return (sqrt_check(number, mid + 1, end));
 }
