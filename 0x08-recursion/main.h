@@ -25,4 +25,6 @@ int palindrome_check(char *start, char *end);
 
 int prime_check(int number, int quotient);
 
+int sqrt_check(int number, int start, int end);
+
 #endif /*MAIN_H*/
