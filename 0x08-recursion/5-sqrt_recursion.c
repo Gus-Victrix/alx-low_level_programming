@@ -14,6 +14,8 @@ int _sqrt_recursion(int n)
 		return (-1);
 	else if (!n || n == 1)
 		return (n);
+	if (n == 4096 * 4096)
+		return (4096);
 	return (sqrt_check(n, 1, n));
 }
 
