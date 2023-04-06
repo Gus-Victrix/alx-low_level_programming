@@ -36,6 +36,6 @@ int  sqrt_check(int number, int start, int end)
 	else if (mid * mid > number)
 		return (sqrt_check(number, start, mid - 1));
 	if ((mid + 1) * (mid + 1) > number)
-		return (-1);
+		return (mid);
 	return (sqrt_check(number, mid + 1, end));
 }
