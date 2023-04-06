@@ -23,4 +23,6 @@ int wildcmp(char *s1, char *s2);
 
 int palindrome_check(char *start, char *end);
 
+int prime_check(int number, int quotient);
+
 #endif /*MAIN_H*/
