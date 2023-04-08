@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	num = coin_changer(atoi(*argv));
+	num = coin_changer(atoi(*(argv + 1)));
 
 	printf("%d\n", num);
 
