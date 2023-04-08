@@ -3,4 +3,6 @@
 
 int _putchar(char c);
 
+int isnum(char *s);
+
 #endif /*MAIN_H*/
