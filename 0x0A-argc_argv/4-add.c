@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 
 	for (counter = 1; counter < argc; counter++)
 	{
-		if(!isnum(argv[counter]))
+		if (!isnum(argv[counter]))
 		{
 			printf("Error\n");
 			return (1);
