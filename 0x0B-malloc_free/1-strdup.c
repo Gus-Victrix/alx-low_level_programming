@@ -1,12 +1,37 @@
 #include "main.h"
 #include <stdlib.h>
 
+int _strlen(char *s);
+
 /**
- * _strlen - Find lenght of input string.
+ * _strdup - Duplicate an input string.
  *
- * @s: String whose length is to be calculated.
+ * @str: String to duplicate.
  *
- * Return: Length of string to be measured.
+ * Return: 0 if issue encountered, pointer to the new string otherwise.
+ */
+char *_strdup(char *str)
+{
+	char *dup;
+	unsigned int len, i;
+
+	if (!str)
+		return (0);
+	len = _strlen(str);
+	dup = (char *)malloc(sizeof(char) * len + 1);
+	if (dup == 0)
+		return (0);
+	for (i = 0; i < len; i++)
+		*(dup + i) = *(str + i);
+	return (dup);
+}
+
+/**
+ * _strlen - Measure length of a string.
+ *
+ * @s: String input
+ *
+ * Return: Length of input string.
  */
 
 int _strlen(char *s)
@@ -16,32 +41,4 @@ int _strlen(char *s)
 	while (*s)
 		s++, i++;
 	return (i);
-}
-
-/**
- * _strdup - Duplicates string and returns pointer to duplicated string in heap
- *
- * @str: String to be dupllicated.
- *
- * Return: NULL if str = NULL, pointer to duplicate otherwise.
- */
-
-char *_strdup(char *str)
-{
-	unsigned int i = 0;
-	char *dup;
-
-	if (!str)
-		return (0);
-
-	i = _strlen(str) + 1;
-	dup = (char *)malloc(sizeof(char) * i);
-	if (!dup)
-		return (0);
-
-	do {
-		*(dup + i) = *(str + i);
-	} while (*(str + i));
-
-	return (dup);
 }
