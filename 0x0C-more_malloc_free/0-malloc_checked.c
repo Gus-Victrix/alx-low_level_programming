@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _malloc_checked - Allocates memory from heap.
+ * malloc_checked - Allocates memory from heap.
  *
  * @b: Number of bytes to be allocated.
  *
