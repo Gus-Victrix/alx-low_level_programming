@@ -10,7 +10,7 @@
  *			it exits with status 98.
  */
 
-void *_malloc_checked(unsigned int b)
+void *malloc_checked(unsigned int b)
 {
 	void *address = malloc(b);
 
