@@ -18,10 +18,8 @@ int _strlen(char *s);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str = 0;
-	unsigned int i = 0, j = 0;
+	int i = 0, j = 0;
 
-	if (!n)
-		return (0);
 	if (!s1 && !s2)
 	{
 		str = malloc(1);
@@ -32,7 +30,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		goto PLAIN_S2;
 	if (!s2)
 		goto PLAIN_S1;
-	if (_strlen(s2) < n)
+	if (_strlen(s2) < (int) n)
 	{
 		str = malloc(_strlen(s1) + _strlen(s2) + 1);
 		if (!str)
@@ -51,9 +49,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (str);
 	}
 
-	if (_strlen(s2) >= n)
+	if (_strlen(s2) >= (int) n)
 	{
-		str = malloc(_strlen(s1) + n + 1);
+		str = malloc(_strlen(s1) + (int) n + 1);
 		if (!str)
 			return (0);
 		while (*(s1 + j))
@@ -61,14 +59,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			*(str + j) = *(s1 + j);
 			j++;
 		}
-		while (j < n)
+		while (j < (int) n)
 		{
 			*(str + j + i) = *(s2 + i);
 			i++;
 		}
 		*(str + j + i) = 0;
 		return (str);
-
+	}
 PLAIN_S1:
 	str = malloc(_strlen(s1) + 1);
 	if (!str)
@@ -84,7 +82,7 @@ PLAIN_S2:
 	str = malloc(n + 1);
 	if (!str)
 		return (0);
-	while (*(s2 + i) && i <= n)
+	while (*(s2 + i) && i < (int) n)
 	{
 		*(str + i) = *(s2 + i);
 		i++;
