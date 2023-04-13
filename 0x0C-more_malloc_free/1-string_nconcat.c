@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		goto PLAIN_S1;
 	if (_strlen(s2) < (int) n)
 	{
-		str = malloc(sizeof(*str) * (strlen(s1) + _strlen(s2) + 1));
+		str = malloc(sizeof(*str) * (_strlen(s1) + _strlen(s2) + 1));
 		if (!str)
 			return (0);
 		while (*(s1 + j))
