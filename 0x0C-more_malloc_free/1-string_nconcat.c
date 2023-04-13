@@ -18,77 +18,93 @@ int _strlen(char *s);
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str = 0;
-	int i = 0, j = 0;
+	long int i = 0, j = 0;
 
-	/*Case: both strings empty*/
+	/*Case: both strings null*/
 	if (!s1 && !s2)
 	{
 		str = malloc(sizeof(*str));
+		/*Returning empty string*/
 		*str = '\0';
 		return (str);
 	}
+
+	/*Case: only string 1 is null*/
 	if (!s1)
-		goto PLAIN_S2;
+	{
+		str = malloc(sizeof(*str) * (n + 1));
+		if (!str)
+			return (0);
+		/*Copying string 2*/
+		while (*(s2 + i) && i < (int) n)
+		{
+			*(str + i) = *(s2 + i);
+			i++;
+		}
+		/*Adding null terminator to end of string*/
+		*(str + i) = 0;
+		return (str);
+	}
+
+	/*Case: only string 2 is null*/
 	if (!s2)
-		goto PLAIN_S1;
+	{
+		str = malloc(sizeof(*str) * (_strlen(s1) + 1));
+		if (!str)
+			return (0);
+		/*Copying string 1*/
+		while (*(s1 + i))
+		{
+			*(str + i) = *(s1 + i);
+			i++;
+		}
+		/*Adding null terminator to end of string*/
+		*(str + i) = 0;
+		return (str);
+	}
+
+	/*Case: String 2 smaller than n characters*/
 	if (_strlen(s2) < (int) n)
 	{
 		str = malloc(sizeof(*str) * (_strlen(s1) + _strlen(s2) + 1));
+		/*Checking malloc() output*/
 		if (!str)
 			return (0);
+		/*Copying string 1*/
 		while (*(s1 + j))
 		{
 			*(str + j) = *(s1 + j);
 			j++;
 		}
+		/*Copying string 2*/
 		while (*(s2 + i))
 		{
 			*(str + j + i) = *(s2 + i);
 			i++;
 		}
+		/*Adding null termination to string*/
 		*(str + j + i) = 0;
 		return (str);
 	}
 
-	if (_strlen(s2) >= (int) n)
-	{
-		str = malloc(sizeof(*str) * (_strlen(s1) + (int) n + 1));
-		if (!str)
-			return (0);
-		while (*(s1 + j))
-		{
-			*(str + j) = *(s1 + j);
-			j++;
-		}
-		while (j < (int) n)
-		{
-			*(str + j + i) = *(s2 + i);
-			i++;
-		}
-		*(str + j + i) = 0;
-		return (str);
-	}
-PLAIN_S1:
-	str = malloc(sizeof(*str) * (_strlen(s1) + 1));
+	/*Case: String 2 is longer than n*/
+	str = malloc(sizeof(*str) * (_strlen(s1) + (int) n + 1));
 	if (!str)
 		return (0);
-	while (*(s1 + i))
+	/*Copying string 1*/
+	while (*(s1 + j))
 	{
-		*(str + i) = *(s1 + i);
+		*(str + j) = *(s1 + j);
+		j++;
+	}
+	/*Copying string 2*/
+	while (j < (int) n)
+	{
+		*(str + j + i) = *(s2 + i);
 		i++;
 	}
-	*(str + i) = 0;
-	return (str);
-PLAIN_S2:
-	str = malloc(sizeof(*str) * (n + 1));
-	if (!str)
-		return (0);
-	while (*(s2 + i) && i < (int) n)
-	{
-		*(str + i) = *(s2 + i);
-		i++;
-	}
-	*(str + i) = 0;
+	/*Adding null terminator*/
+	*(str + j + i) = 0;
 	return (str);
 }
 
