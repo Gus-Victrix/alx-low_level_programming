@@ -12,9 +12,7 @@
 
 void *_malloc_checked(unsigned int b)
 {
-	void *address;
-
-	address = malloc(b);
+	void *address = malloc(b);
 
 	if (!address)
 		exit(98);
