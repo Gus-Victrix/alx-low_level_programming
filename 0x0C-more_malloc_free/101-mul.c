@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	int len1, len2;
 	int *result;
 
-	if (argc != 3 || argv[1] == 0 || argv[2] == NULL)
+	if (argc != 3 || argv[1] == NULL || argv[2] == NULL)
 		error();
 
 	check_digit(argv[1]);
@@ -97,7 +97,7 @@ int _strlen(char *s)
 	int i;
 
 	for (i = 0; s[i]; i++)
-		continue;
+		;
 	return (i);
 }
 
@@ -106,10 +106,10 @@ int _strlen(char *s)
 /**
  * _calloc_ - Recode the calloc function
  *
- * @nmemb: Length of the pointer array.
- * @size: Size of elements
+ * @nmemb: Length of the array that contain pointers
+ * @size: Size of the elements
  *
- * Return: 0 if any issues, pointer to the array else (success)
+ * Return: NULL if any issues, pointer to the array else (success)
  */
 int *_calloc_(unsigned int nmemb, unsigned int size)
 {
@@ -149,21 +149,25 @@ char *_memset(char *s, char b, unsigned int n)
  * check_alloc - check if the malloc is a success
  *
  * @p: Pointer that been malloc
+ *
+ * Return: Anything, cause void function
  */
 void check_alloc(int *p)
 {
-	if (p == 0)
+	if (p == NULL)
 		error();
 }
 
 /**
- * multiply - Multiply two string and print result.
+ * multiply - multiply two sting and print it
  *
  * @result: Reslut array
  * @len1: Length of the first str
  * @s1: First str
  * @len2: Length of the second str
  * @s2: Second str
+ *
+ * Return: Anything, cause void function.
  */
 void multiply(int *result, int len1, char *s1, int len2, char *s2)
 {
