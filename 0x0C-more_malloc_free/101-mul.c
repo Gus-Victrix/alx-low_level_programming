@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
+void check_zero(char *str);
 void putword(char *str);
 void error(void);
 void check_digit(char *str);
@@ -28,6 +29,8 @@ int main(int argc, char *argv[])
 
 	check_digit(argv[1]);
 	check_digit(argv[2]);
+	check_zero(argv[1]);
+	check_zero(argv[2]);
 
 	len1 = _strlen(argv[1]);
 	len2 = _strlen(argv[2]);
@@ -196,4 +199,27 @@ void multiply(int *result, int len1, char *s1, int len2, char *s2)
 	for ( ; i < (len1 + len2) ; i++)
 		_putchar(result[i] + '0');
 	_putchar('\n');
+}
+
+/**
+ * check_zero - Check if character string has a value of 0.
+ *
+ * @str: String to be checked.
+ *
+ * Return: Exits program and prints 0 if either of input strings is 0.
+ */
+
+void check_zero(char *str)
+{
+	unsigned int len = 0, i = 0;
+
+	len = _strlen(str);
+	while (*str)
+	{
+		if (*str != 48)
+			return;
+		str++;
+	}
+	_putchar(48);
+	exit(0);
 }
