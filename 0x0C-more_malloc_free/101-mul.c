@@ -211,9 +211,6 @@ void multiply(int *result, int len1, char *s1, int len2, char *s2)
 
 void check_zero(char *str)
 {
-	unsigned int len = 0, i = 0;
-
-	len = _strlen(str);
 	while (*str)
 	{
 		if (*str != 48)
