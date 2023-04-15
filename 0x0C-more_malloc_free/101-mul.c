@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
+int _putchar(char c);
 void check_zero(char *str);
 void putword(char *str);
 void error(void);
@@ -218,5 +219,6 @@ void check_zero(char *str)
 		str++;
 	}
 	_putchar(48);
+	_putchar(10);
 	exit(0);
 }
