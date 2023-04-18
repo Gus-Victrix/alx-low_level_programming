@@ -1,14 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
 
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (*s)
-		s++, i++;
-	return (i)
-}
 /**
  * new_dog - Creates a new dog.
  *
