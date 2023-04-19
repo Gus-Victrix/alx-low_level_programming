@@ -16,7 +16,7 @@
 
 int main(int argc, char *argv[])
 {
-	int (*arithmetic)(int,int), num1, num2;
+	int (*arithmetic)(int, int), num1, num2;
 
 	if (argc != 4)
 	{
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(99);
-	}	
+	}
 
 	num1 = atoi(*(argv + 1)), num2 = atoi(*(argv + 3));
 	printf("%d\n", arithmetic(num1, num2));
