@@ -1,5 +1,6 @@
 #ifndef FUNC_PTR_H
 #define FUNC_PTR_H
+#include <aio.h>
 
 int _putchar(char);
 
