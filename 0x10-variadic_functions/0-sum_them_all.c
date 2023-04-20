@@ -3,12 +3,13 @@
 
 
 /**
- * sum_them_all - Sum all the arg given
+ * sum_them_all - Sum all the parameters passed.
  *
- * @n: number of given arg
+ * @n: Number of parameters.
  *
- * Return: the sum of all given arg, 0 else
+ * Return: Sum of input parameters.
  */
+
 int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int i, sum = 0;
