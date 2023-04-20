@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	arithmetic = get_op_func(*(argv + 2));
+	arithmetic = get_op_func(argv[2]);
 	if (!arithmetic)
 	{
 		printf("Error\n");

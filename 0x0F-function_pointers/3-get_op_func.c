@@ -1,4 +1,6 @@
 #include "3-calc.h"
+#include <stddef.h>
+#include <string.h>
 
 /**
  * get_op_func - Gets the correct operation function based on input.
@@ -17,7 +19,7 @@ int (*get_op_func(char *s))(int, int)
 		{"/", op_div},
 		{"%", op_mod},
 		{NULL, NULL}
-	}
+	};
 	int i = 0;
 
 	while (ops[i].op)
