@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	print_opcode((char *)main, atoi(*(argv + 1)));
+	print_opcode((char *)&main, atoi(*(argv + 1)));
 
 	return (0);
 }
