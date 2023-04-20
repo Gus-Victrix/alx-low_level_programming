@@ -3,6 +3,28 @@
 #include <stddef.h>
 
 /**
+ * print_opcode - Prints given number of opcode of given input function.
+ *
+ * @function: Pointer to function typecast to char *.
+ * @num: Number of bytes of opcodes to print.
+ */
+
+void print_opcode(char *function, int num)
+{
+	int i;
+
+	for (i = 0; i < num; i++)
+	{
+		printf("%02x", function[i]);
+		if (i + 1 == num)
+		{
+			printf("\n");
+			return;
+		}
+		printf(" ");
+	}
+}
+/**
  * main - Prints it's own opcode and exits.
  *
  * @argc: Number of commandline arguments.
@@ -15,27 +37,17 @@
 
 int main(int argc, char *argv[])
 {
-	unsigned char *main_ptr;
-	int size, i;
-
-	main_ptr = (unsigned char *)main;
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	size = atoi(argv[1]);
-	if (size < 0)
+	if (atoi(*(argv + 1)) < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
-
-	for (i = 0; i < size; i++)
-	{
-		printf("%02x ", main_ptr[i]);
-	}
-	printf("\n");
+	print_opcode((char *)main, atoi(*(argv + 1)));
 
 	return (0);
 }
