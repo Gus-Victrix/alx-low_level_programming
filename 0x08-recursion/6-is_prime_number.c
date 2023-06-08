@@ -11,12 +11,12 @@
 
 int optimized_prime(int n, int i)
 {
-	if (i * i > n)
-		return (1);
-
 	if (n % i == 0 || n % (i + 2) == 0)
 		return (0);
-	return (optimized_prime(n, i + 6));
+
+	if (i <= n / i)
+		return (optimized_prime(n, i + 6));
+	return (1);
 }
 
 /**
@@ -31,7 +31,7 @@ int is_prime_number(int n)
 {
 	if (n == 2 || n == 3)
 		return (1);
-	if (n < 2 || n % 2 || n % 3)
+	if (n < 2 || n % 2 == 0 || n % 3 == 0)
 		return (0);
 	return (optimized_prime(n, 5));
 }
