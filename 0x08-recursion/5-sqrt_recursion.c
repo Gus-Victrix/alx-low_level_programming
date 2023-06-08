@@ -1,29 +1,22 @@
 #include "main.h"
 
 /**
- * nat_sq - Checks the natural square root of a number.
+ * newton_raphson_sqrt - Uses Newton-Raphson method to compute natural sqrt.
  *
- * @n: Number to be checked.
- * @start: Lowwer bound of the sqrt.
- * @end: Upper bound of the sqrt.
- * @count: Number of iterations completed.
+ * @n: Number whose sqrt is to be computed.
+ * @x0: The current sqrt guess.
  *
- * Return: Natural square root of a number.
+ * Return: The natural square root of the number.
  */
 
-int nat_sq(int n, int start, int end, int count)
+double newton_raphson_sqrt(double n, double x0)
 {
-	int mid;
+	double x = 0.5 * (x0 + (n / x0));
 
-	mid = (start + end) / 2;
-	if (count > 18)
-		return (-1);
-
-	if (mid * mid > n)
-		return (nat_sq(n, start, mid, count + 1));
-	if (mid * mid == n)
-		return (mid);
-	return (nat_sq(n, mid, end, count + 1));
+	if (x == x0 || (int)x == (int)x0)
+		return (x);
+	else
+		return (newton_raphson_sqrt(n, x0 + 1));
 }
 
 /**
@@ -40,5 +33,5 @@ int _sqrt_recursion(int n)
 		return (-1);
 	if (n == 0 || n == 1)
 		return (n);
-	return (nat_sq(n, 0, n, 1));
+	return ((int)newton_raphson_sqrt((double)n, 1));
 }
