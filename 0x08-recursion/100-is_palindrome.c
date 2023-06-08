@@ -49,5 +49,5 @@ int is_palindrome(char *s)
 	if (!*s)
 		return (1);
 
-	return (palindrome(s + _strlen_recursion(char *s), s));
+	return (palindrome(s + _strlen_recursion(s), s));
 }
