@@ -1,14 +1,13 @@
 #include "lists.h"
 
 /**
- * _strlen - Returns stringlength
+ * _str_len - Returns stringlength
  *
  * @str: Input string.
  *
  * Return: Length of input string.
  */
-
-int _strlen(char *str)
+int _str_len(const char *str)
 {
 	int i = 0;
 
@@ -47,7 +46,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	new_node->len = _strlen(str);
+	new_node->len = _str_len(str);
 	new_node->next = *head;
 	*head = new_node;
 

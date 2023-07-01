@@ -8,7 +8,7 @@
  * Return: Length of input string.
  */
 
-int _strlen(char *str)
+int _strlen(const char *str)
 {
 	int i = 0;
 
