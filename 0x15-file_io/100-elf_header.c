@@ -7,13 +7,30 @@
 #define BUFFER_SIZE 1024
 
 /**
+ * _strlen - Checks string length of string.
+ *
+ * @s: string to be measured.
+ *
+ * Return: 0 if error, strlen otherwise.
+ */
+
+int _strlen(const char *s)
+{
+	int i = 0;
+
+	while (s[i] != 0)
+		i++;
+	return (i);
+}
+/**
  * print_error - Prints the error message.
  *
  * @message: Error message.
  */
 void print_error(const char *message)
 {
-	fprintf(stderr, "Error: %s\n", message);
+	write(2, "Error: ", 7);
+	write(2, message, _strlen(message));
 	exit(98);
 }
 
