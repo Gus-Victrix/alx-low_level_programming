@@ -18,10 +18,12 @@ size_t print_dlistint(const dlistint_t *h)
 	/* Moving to the start of the list */
 	while (p->prev != NULL)
 		p = p->prev;
+
 	/* Printing the values of the list */
-	while (p->next != NULL)
+	while (p != NULL)
 	{
 		printf("%d\n", p->n);
+		p = p->next;
 		count++;
 	}
 	return (count);
