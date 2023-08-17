@@ -3,6 +3,7 @@
 
 /* External library dependencies */
 #include <stdlib.h>
+#include <stdio.h>
 
 /* Structure to be used for this project */
 /**
