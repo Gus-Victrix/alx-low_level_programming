@@ -25,8 +25,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	}
 	/* Case inserting infront of list */
 	if (idx == 0)
-		return (add_dnodeint(h,n));
-				
+		return (add_dnodeint(h, n));
+
 	/* Case: appending to list */
 	len = dlistint_len_(*h);
 	if (idx == len)
