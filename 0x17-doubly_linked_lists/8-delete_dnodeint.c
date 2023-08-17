@@ -1,5 +1,6 @@
 #include "lists.h"
 
+size_t dlistint_len_(const dlistint_t *h);
 /**
  * delete_dnodeint_at_index - deletes specific node in a dlistint_t list.
  *
@@ -26,7 +27,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (1);
 	}
 	/* Case: out of bounds */
-	len = (unsigned int)dlistint_len((const dlistint_t *)(*head));
+	len = (unsigned int)dlistint_len_((const dlistint_t *)(*head));
 	if (index >= len)
 		return (-1);
 	/* Moving to required position */
@@ -41,4 +42,47 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		current->next->prev = current->prev;
 	free(current);
 	return (1);
+}
+
+
+/**
+ * dlistint_len_ - returns the number of elements in a dlistint_t list.
+ *
+ * @h: Member of a dlistint_t list.
+ *
+ * Return: Number of elements in the list.
+ */
+size_t dlistint_len_(const dlistint_t *h)
+{
+	dlistint_t *p = NULL;
+	int count = 0;
+
+	if (h == NULL)
+		return (0);
+
+	/* Counting the element stored in h */
+	count++;
+
+	/* Counting the elements before h */
+	if (h->prev != NULL)
+	{
+		p = h->prev;
+		while (p != NULL)
+		{
+			p = p->prev;
+			count++;
+		}
+	}
+
+	/* Counting the elements after h */
+	if (h->next != NULL)
+	{
+		p = h->next;
+		while (p != NULL)
+		{
+			p = p->next;
+			count++;
+		}
+	}
+	return (count);
 }
