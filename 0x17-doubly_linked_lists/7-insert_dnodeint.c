@@ -12,7 +12,7 @@ size_t dlistint_len_(const dlistint_t *h);
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	int len = 0, counter = 0;
+	unsigned int len = 0, counter = 0;
 	dlistint_t *new_node = NULL, *current = *h;
 
 	/* Case: empty list */
