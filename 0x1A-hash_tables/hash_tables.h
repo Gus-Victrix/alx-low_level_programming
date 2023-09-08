@@ -3,6 +3,8 @@
 
 /* Included libraries. */
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 
 /**
  * struct hash_node_s - Node of a hash table.
@@ -44,5 +46,6 @@ void hash_table_delete(hash_table_t *ht);
 
 unsigned long _strlen(const char *s);
 char *_strcpy(char *dest, const char *src);
+int _strcmp(const char *s1, const char *s2);
 
 #endif
