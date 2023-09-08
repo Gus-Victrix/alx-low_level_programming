@@ -1,8 +1,9 @@
-# C - Hash tables
+<h1> C - Hash tables</h1>
 
 <p>This project aims to develop the idea through which the dictionaries in python are implemented.
 </p>
-## Files
+
+<h2> Files</h2>
 	<ol>
 		<li><a href="0-hash_table_create.c"> This file defines a function that creates a hash table. </a></li>
 		<li><a href="1-djb2.c"> This file defines a function that implements the djb2 algorithm. </a></li>
