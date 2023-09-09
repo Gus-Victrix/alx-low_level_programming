@@ -43,7 +43,7 @@ void magc(const Elf64_Ehdr *header)
 {
 	int i = 0;
 
-	printf("ELF Header:\n");
+	printf("ELF Header:\nMagic:  ");
 	while (i < EI_NIDENT)
 		printf("%02x ", header->e_ident[i++]);
 	printf("\n");
@@ -69,7 +69,7 @@ void cls(const Elf64_Ehdr *header)
 		printf("ELF64\n");
 		break;
 	default:
-		printf("unknown\n");
+		printf("\n");
 		break;
 	}
 }
@@ -131,10 +131,10 @@ void os_abi(const Elf64_Ehdr *header)
 		printf("NetBSD\n");
 		break;
 	case ELFOSABI_LINUX:
-		printf("Linux\n");
+		printf("UNIX - Linux\n");
 		break;
 	case ELFOSABI_SOLARIS:
-		printf("Solaris\n");
+		printf("UNIX - Solaris\n");
 		break;
 	case ELFOSABI_AIX:
 		printf("AIX\n");
@@ -143,7 +143,7 @@ void os_abi(const Elf64_Ehdr *header)
 		printf("IRIX\n");
 		break;
 	case ELFOSABI_FREEBSD:
-		printf("FreeBSD\n");
+		printf("UNIX - FreeBSD\n");
 		break;
 	case ELFOSABI_TRU64:
 		printf("TRU64 UNIX\n");
@@ -155,7 +155,7 @@ void os_abi(const Elf64_Ehdr *header)
 		printf("OpenBSD\n");
 		break;
 	default:
-		printf("unknown\n");
+		printf("\n");
 		break;
 	}
 }
@@ -198,7 +198,7 @@ void tpe(const Elf64_Ehdr *header)
 		printf("CORE (Core file)\n");
 		break;
 	default:
-		printf("unknown\n");
+		printf("\n");
 		break;
 	}
 }
@@ -217,7 +217,7 @@ void print_elf_header(const Elf64_Ehdr *header)
 	os_abi(header);
 	a_bi_ver(header);
 	tpe(header);
-	printf("  Entry point address:               %lx\n", header->e_entry);
+	printf("  Entry point address:               0x%lx\n", header->e_entry);
 }
 
 /**
