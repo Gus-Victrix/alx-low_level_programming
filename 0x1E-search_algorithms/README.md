@@ -1,4 +1,3 @@
-
 # 0x1E. C - Search Algorithms
 
  `C` `Algorithm`
@@ -44,17 +43,17 @@
 #### Procedure:
 \$input:\$ An ordered list \$L\$, its length \$n\$ and a search key \$s\$.
 \$output:\$ Position of \$s\$ in \$L\$, or error value if \$s\$ not in \$L\$.
- 1. \$\textbf{let:} temp => 0 \hspace{1cm}, current => \sqrt{n}\$
- 2. \$\textbf{while} L_{min(b, n) - 1} < s \textbf{do}\$
+ 1. \$\textbf{let:}\ temp => 0 \hspace{1cm},\ current => \sqrt{n}\$
+ 2. \$\textbf{while}\ L_{min(b, n) - 1} < s\ \textbf{do}\$
  3. \$\hspace{1cm}a => b\$
  4. \$\hspace{1cm}b => b + \sqrt{n}\$
- 5. \$\hspace{1cm}\textbf{if} a \ge n \textbf{then}\$
+ 5. \$\hspace{1cm}\textbf{if}\ a \ge n\ \textbf{then}\$
  6. \$\hspace{2cm}\textbf{return error-value}\$
  7. \$\textbf{while} L_{a} < s \textbf{do}\$
  8. \$\hspace{1cm}a => a + 1\$
  10. \$\hspace{1cm}\textbf{if} a = min(b, n) \textbf{then}\$
  11. \$\hspace{2cm}\textbf{return error-value}\$
- 7. \$\textbf{if} L_{a} = s \textbf{then}\$
- 11. \$\hspace{1cm}\textbf{return} a\$
+ 7. \$\textbf{if}\ L_{a} = s\ \textbf{then}\$
+ 11. \$\hspace{1cm}\textbf{return}\ a\$
  1. \$\textbf{else}\$
  11. \$\hspace{1cm}\textbf{return nothing}\$
