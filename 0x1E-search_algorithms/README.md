@@ -49,12 +49,12 @@
  3. \$\hspace{1cm}a => b\$
  4. \$\hspace{1cm}b => b + \sqrt{n}\$
  5. \$\hspace{1cm}\textbf{if} a \ge n \textbf{then}\$
- 6. \$\hspace{2cm}\testbf{return error-value}\$
+ 6. \$\hspace{2cm}\textbf{return error-value}\$
  7. \$\textbf{while} L_{a} < s \textbf{do}\$
  8. \$\hspace{1cm}a => a + 1\$
  10. \$\hspace{1cm}\textbf{if} a = min(b, n) \textbf{then}\$
- 11. \$\hspace{2cm}\testbf{return error-value}\$
+ 11. \$\hspace{2cm}\textbf{return error-value}\$
  7. \$\textbf{if} L_{a} = s \textbf{then}\$
- 11. \$\hspace{1cm}\testbf{return} a\$
+ 11. \$\hspace{1cm}\textbf{return} a\$
  1. \$\textbf{else}\$
- 11. \$\hspace{1cm}\testbf{return nothing}\$
+ 11. \$\hspace{1cm}\textbf{return nothing}\$
