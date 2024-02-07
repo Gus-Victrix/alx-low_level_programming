@@ -23,9 +23,8 @@
 
  * Time Complexity: \$O(n)\$
  ### Procedure:
-  1. Declare index to be used for looping
-  2. Loop: While index < array length.
-  3.   Compare value against array member at current index.
-  4.   If they match: Return the current index.
-  5.   Increament the index.
-  6. The value was not found, so error indicator is returned.
+  1. Declare \$index\$ to be used for looping
+  2. Loop: While \$index < array-length\$.
+  3.   Compare value against array member at \$index\$.
+  4.   If they match: Return the \$index\$.
+  5.   Increament \$index\$.
