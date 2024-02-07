@@ -25,6 +25,7 @@
  ### Procedure:
   1. Declare \$index\$ to be used for looping
   2. Loop: While \$index < array-length\$.
-  3.   Compare value against array member at \$index\$.
-  4.   If they match: Return the \$index\$.
-  5.   Increament \$index\$.
+  1. Compare value against array member at \$index\$.
+  4. If they match: Return the \$index\$.
+  5. Increament \$index\$.
+  6. End loop.
