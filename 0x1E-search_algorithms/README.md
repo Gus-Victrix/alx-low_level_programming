@@ -19,10 +19,10 @@
 
 ## Specifics
 
-1. [Linear Search Algorithm](./0-linear_search.c)
+###  [Linear Search Algorithm](./0-linear_search.c)
 
  * Time Complexity: \$O(n)\$
- * Procedure:
+ ### Procedure:
   1. Declare index to be used for looping
   2. Loop: While index < array length.
   3.   Compare value against array member at current index.
